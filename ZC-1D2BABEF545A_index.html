@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPLITZZ! ⚡ Precision Group Bill Splitter</title>
+  <meta name="description" content="Precision bill splitter for groups with exact penny-precision mathematical reconciliation, customizable tax, tip, GPS coords, and verified receipt export. Submission of Ojas Shailesh Deshpande.">
+  <link rel="stylesheet" href="ZC-1D2BABEF545A_style.css">
+</head>
+<body>
+  <!-- Background Decorative Shapes -->
+  <div class="bg-shape shape-1" aria-hidden="true"></div>
+  <div class="bg-shape shape-2" aria-hidden="true"></div>
+  <div class="bg-shape shape-3" aria-hidden="true"></div>
+
+  <div class="app-container">
+    <!-- Header: Centered Logo with Techfest 2026 & ID Elements Below -->
+    <header class="app-header">
+      <!-- Centered SPLITZZ! Logo -->
+      <div class="logo-wrapper">
+        <h1 class="app-title">
+          <span class="title-split">SPLIT</span><span class="title-zz">ZZ!</span>
+        </h1>
+      </div>
+
+      <!-- Techfest 2026 & Competition ID Badges Below Logo -->
+      <div class="brand-badge-row">
+        <span class="brand-badge">⚡ TECHFEST 2026 • ZEROCODE CHALLENGE</span>
+        <span class="comp-id-badge">ID: ZC-1D2BABEF545A</span>
+      </div>
+      
+      <!-- Author Attribution -->
+      <div class="author-attribution">
+        <span>Submission of <strong>Ojas Shailesh Deshpande</strong></span>
+        <span class="attribution-dot">•</span>
+        <a href="https://www.ojasdeshpande.in" target="_blank" rel="noopener noreferrer" class="author-link">www.ojasdeshpande.in</a>
+      </div>
+
+      <p class="app-subtitle">Real-time group expense allocator with penny-exact mathematical reconciliation</p>
+    </header>
+
+    <!-- Main Grid -->
+    <main class="main-layout">
+      <!-- Input Section -->
+      <section class="card input-card" aria-labelledby="input-heading">
+        <div class="card-header">
+          <div class="card-header-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
+          <div>
+            <h2 id="input-heading" class="card-title">Expense Configuration</h2>
+            <p class="card-desc">Enter amount, occasion, location, tax & tip</p>
+          </div>
+        </div>
+
+        <form id="splitter-form" class="form-grid" novalidate>
+          <!-- Currency Selection -->
+          <div class="form-group">
+            <label for="currency-select" class="form-label">
+              <span>Currency</span>
+              <span class="badge-pill">Global Standard</span>
+            </label>
+            <div class="select-wrapper">
+              <select id="currency-select" class="form-input custom-select">
+                <option value="₹" selected>₹ INR (Indian Rupee)</option>
+                <option value="$">$ USD (US Dollar)</option>
+                <option value="€">€ EUR (Euro)</option>
+                <option value="£">£ GBP (British Pound)</option>
+                <option value="¥">¥ JPY (Japanese Yen)</option>
+                <option value="A$">A$ AUD (Australian Dollar)</option>
+                <option value="C$">C$ CAD (Canadian Dollar)</option>
+                <option value="AED">AED (UAE Dirham)</option>
+                <option value="SGD">S$ SGD (Singapore Dollar)</option>
+              </select>
+              <span class="select-arrow" aria-hidden="true">▼</span>
+            </div>
+          </div>
+
+          <!-- Occasion Name (Cleaned up presets + Date Night option) -->
+          <div class="form-group">
+            <label for="occasion-input" class="form-label">
+              <span>Occasion Name <span class="required">*</span></span>
+              <span class="label-hint">Event or bill purpose</span>
+            </label>
+            <div class="input-with-icon">
+              <span class="input-icon" aria-hidden="true">🎉</span>
+              <input 
+                type="text" 
+                id="occasion-input" 
+                class="form-input" 
+                placeholder="e.g. Pizza Party, Date Night, Team Lunch..." 
+                maxlength="60"
+                autocomplete="off"
+                required
+              >
+            </div>
+            <!-- Cleaned Curated Occasion Chips -->
+            <div class="chips-container" aria-label="Quick occasion presets">
+              <button type="button" class="chip-btn" data-occasion="🍕 Pizza Party">🍕 Pizza Party</button>
+              <button type="button" class="chip-btn" data-occasion="🌹 Date Night">🌹 Date Night</button>
+              <button type="button" class="chip-btn" data-occasion="🏢 Team Lunch">🏢 Team Lunch</button>
+              <button type="button" class="chip-btn" data-occasion="🏖️ Beach Trip">🏖️ Beach Trip</button>
+              <button type="button" class="chip-btn" data-occasion="☕ Chai & Snacks">☕ Chai & Snacks</button>
+              <button type="button" class="chip-btn" data-occasion="🎬 Movie Night">🎬 Movie Night</button>
+              <button type="button" class="chip-btn" data-occasion="🛒 Flat Groceries">🛒 Flat Groceries</button>
+              <button type="button" class="chip-btn" data-occasion="🎂 Birthday Party">🎂 Birthday</button>
+              <button type="button" class="chip-btn" data-occasion="🍻 Drinks & Pub">🍻 Drinks & Pub</button>
+              <button type="button" class="chip-btn" data-occasion="🍜 Ramen & Dinner">🍜 Ramen Dinner</button>
+              <button type="button" class="chip-btn" data-occasion="🚗 Fuel & Tolls">🚗 Fuel & Tolls</button>
+              <button type="button" class="chip-btn" data-occasion="🏕️ Mountain Trek">🏕️ Mountain Trek</button>
+              <button type="button" class="chip-btn" data-occasion="🎮 Gaming Night">🎮 Gaming Night</button>
+              <button type="button" class="chip-btn" data-occasion="🏸 Sports & Turf">🏸 Sports & Turf</button>
+              <button type="button" class="chip-btn" data-occasion="🏠 Rent & Wi-Fi">🏠 Rent & Wi-Fi</button>
+              <button type="button" class="chip-btn" data-occasion="🛍️ Shopping Spree">🛍️ Shopping Spree</button>
+            </div>
+            <div id="occasion-error" class="field-error" aria-live="polite"></div>
+          </div>
+
+          <!-- Event Date Selection -->
+          <div class="form-group">
+            <label for="event-date-input" class="form-label">
+              <span>Event Date</span>
+              <span class="label-hint">When the event occurred</span>
+            </label>
+            <div class="input-with-icon">
+              <span class="input-icon" aria-hidden="true">📅</span>
+              <input 
+                type="date" 
+                id="event-date-input" 
+                class="form-input date-input"
+              >
+            </div>
+          </div>
+
+          <!-- Location (Manual or GPS Coords Permission) -->
+          <div class="form-group">
+            <label for="location-input" class="form-label">
+              <span>Location / Venue</span>
+              <span class="label-hint">Manual or GPS coords</span>
+            </label>
+            <div class="location-input-group">
+              <div class="input-with-icon location-field-wrap">
+                <span class="input-icon" aria-hidden="true">📍</span>
+                <input 
+                  type="text" 
+                  id="location-input" 
+                  class="form-input" 
+                  placeholder="e.g. Bandra West, Mumbai or Café Royale"
+                  maxlength="80"
+                  autocomplete="off"
+                >
+              </div>
+              <button type="button" id="detect-gps-btn" class="btn-location-gps" title="Detect GPS coordinates using device location" aria-label="Detect GPS coordinates">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="22" y1="12" x2="18" y2="12"></line>
+                  <line x1="6" y1="12" x2="2" y2="12"></line>
+                  <line x1="12" y1="6" x2="12" y2="2"></line>
+                  <line x1="12" y1="22" x2="12" y2="18"></line>
+                </svg>
+                <span>GPS Coords</span>
+              </button>
+            </div>
+            <div id="location-hint" class="location-status-text">Enter address or click "GPS Coords" to auto-detect coordinates</div>
+          </div>
+
+          <!-- Total Bill Amount (Subtotal) -->
+          <div class="form-group">
+            <label for="amount-input" class="form-label">
+              <span>Bill Subtotal Amount <span class="required">*</span></span>
+              <span class="label-hint">Before tax/tip</span>
+            </label>
+            <div class="input-with-icon">
+              <span id="currency-prefix" class="input-icon font-bold">₹</span>
+              <input 
+                type="number" 
+                id="amount-input" 
+                class="form-input" 
+                placeholder="0.00" 
+                step="0.01" 
+                min="0.01"
+                required
+              >
+            </div>
+            <!-- Quick Amount Presets -->
+            <div class="chips-container" aria-label="Quick amount presets">
+              <button type="button" class="chip-btn amount-chip" data-amount="500">+500</button>
+              <button type="button" class="chip-btn amount-chip" data-amount="1000">+1000</button>
+              <button type="button" class="chip-btn amount-chip" data-amount="2500">+2500</button>
+              <button type="button" class="chip-btn amount-chip" data-amount="5000">+5000</button>
+            </div>
+            <div id="amount-error" class="field-error" aria-live="polite"></div>
+          </div>
+
+          <!-- Tax Configuration -->
+          <div class="form-group config-card">
+            <div class="config-header">
+              <label class="form-label mb-0">
+                <span>Tax & Service Levy</span>
+                <span class="badge-pill">Tax Rate</span>
+              </label>
+              <label class="inline-checkbox-label" for="tax-inclusive-checkbox">
+                <input type="checkbox" id="tax-inclusive-checkbox" class="custom-checkbox">
+                <span>Amount includes tax (0% extra)</span>
+              </label>
+            </div>
+
+            <div id="tax-controls-wrapper" class="tax-controls-box">
+              <div class="chips-container tax-chips" role="radiogroup" aria-label="Tax percentage presets">
+                <button type="button" class="tax-btn active" data-tax="0">0%</button>
+                <button type="button" class="tax-btn" data-tax="5">5%</button>
+                <button type="button" class="tax-btn" data-tax="8.25">8.25%</button>
+                <button type="button" class="tax-btn" data-tax="12">12%</button>
+                <button type="button" class="tax-btn" data-tax="18">18%</button>
+                <button type="button" class="tax-btn" data-tax="custom">Custom</button>
+              </div>
+
+              <!-- Custom Tax Input -->
+              <div id="custom-tax-input-wrap" class="custom-rate-input-wrap" style="display: none;">
+                <span class="rate-affix">Custom Tax:</span>
+                <input type="number" id="custom-tax-input" class="form-input rate-input" placeholder="0.0" step="0.1" min="0" max="100">
+                <span class="rate-affix">%</span>
+              </div>
+            </div>
+            <div class="config-summary-subtext" id="tax-calc-preview">Tax added: ₹0.00</div>
+          </div>
+
+          <!-- Tip Configuration -->
+          <div class="form-group config-card">
+            <div class="config-header">
+              <label class="form-label mb-0">
+                <span>Tip for Service / Gratuity</span>
+                <span class="badge-pill">Gratuity</span>
+              </label>
+              <div class="mini-toggle-group" role="radiogroup" aria-label="Tip calculation mode">
+                <button type="button" id="tip-mode-percent-btn" class="mini-toggle-btn active" data-tip-mode="percent">% of Bill+Tax</button>
+                <button type="button" id="tip-mode-amount-btn" class="mini-toggle-btn" data-tip-mode="amount">Fixed Amount</button>
+              </div>
+            </div>
+
+            <!-- Tip by Percentage View -->
+            <div id="tip-percent-view" class="tip-view-box">
+              <div class="chips-container tip-chips" role="radiogroup" aria-label="Tip percentage presets">
+                <button type="button" class="tip-btn active" data-tip="0">0%</button>
+                <button type="button" class="tip-btn" data-tip="5">5%</button>
+                <button type="button" class="tip-btn" data-tip="10">10%</button>
+                <button type="button" class="tip-btn" data-tip="15">15%</button>
+                <button type="button" class="tip-btn" data-tip="18">18%</button>
+                <button type="button" class="tip-btn" data-tip="20">20%</button>
+                <button type="button" class="tip-btn" data-tip="custom">Custom %</button>
+              </div>
+
+              <div id="custom-tip-percent-wrap" class="custom-rate-input-wrap" style="display: none;">
+                <span class="rate-affix">Custom Tip:</span>
+                <input type="number" id="custom-tip-percent-input" class="form-input rate-input" placeholder="0.0" step="0.5" min="0" max="100">
+                <span class="rate-affix">%</span>
+              </div>
+            </div>
+
+            <!-- Tip by Flat Custom Amount View -->
+            <div id="tip-amount-view" class="tip-view-box" style="display: none;">
+              <div class="input-with-icon">
+                <span id="tip-amount-prefix" class="input-icon font-bold">₹</span>
+                <input 
+                  type="number" 
+                  id="custom-tip-amount-input" 
+                  class="form-input" 
+                  placeholder="Enter flat tip amount (e.g. 50)" 
+                  step="0.01" 
+                  min="0"
+                >
+              </div>
+            </div>
+
+            <div class="config-summary-subtext" id="tip-calc-preview">Tip added: ₹0.00 (calculated on subtotal + tax)</div>
+          </div>
+
+          <!-- Dynamic Grand Bill Total Preview -->
+          <div class="live-grand-total-banner">
+            <div class="grand-total-row">
+              <span class="gt-label">Computed Grand Bill:</span>
+              <span class="gt-value" id="live-grand-total">₹0.00</span>
+            </div>
+            <div class="grand-total-breakdown" id="live-grand-breakdown">
+              Subtotal: ₹0.00 + Tax: ₹0.00 + Tip: ₹0.00
+            </div>
+          </div>
+
+          <!-- Number of People -->
+          <div class="form-group">
+            <label for="people-input" class="form-label">
+              <span>Number of People <span class="required">*</span></span>
+              <span class="label-hint">Must be 1 or more</span>
+            </label>
+            <div class="stepper-container">
+              <button type="button" id="decrement-people" class="stepper-btn" aria-label="Decrease people count">−</button>
+              <input 
+                type="number" 
+                id="people-input" 
+                class="form-input stepper-input" 
+                placeholder="4" 
+                min="1" 
+                max="50"
+                step="1" 
+                value="4"
+                required
+              >
+              <button type="button" id="increment-people" class="stepper-btn" aria-label="Increase people count">+</button>
+            </div>
+            <!-- Quick People Chips -->
+            <div class="chips-container" aria-label="Quick people presets">
+              <button type="button" class="chip-btn people-chip" data-people="2">2 Friends</button>
+              <button type="button" class="chip-btn people-chip" data-people="3">3 Friends</button>
+              <button type="button" class="chip-btn people-chip active" data-people="4">4 Friends</button>
+              <button type="button" class="chip-btn people-chip" data-people="5">5 Friends</button>
+              <button type="button" class="chip-btn people-chip" data-people="6">6 Friends</button>
+              <button type="button" class="chip-btn people-chip" data-people="8">8 Friends</button>
+            </div>
+            <div id="people-error" class="field-error" aria-live="polite"></div>
+          </div>
+
+          <!-- Split Mode Selector -->
+          <div class="form-group">
+            <label class="form-label">
+              <span>Split Distribution Method</span>
+              <span class="badge-pill">Auto-Rebalanced</span>
+            </label>
+            <div class="split-mode-tabs" role="tablist" aria-label="Split mode options">
+              <button type="button" class="mode-tab active" data-mode="equal" role="tab" aria-selected="true">
+                <span class="tab-icon">⚖️</span>
+                <span>Equally</span>
+              </button>
+              <button type="button" class="mode-tab" data-mode="unequal-amount" role="tab" aria-selected="false">
+                <span class="tab-icon">💵</span>
+                <span>Custom Amount</span>
+              </button>
+              <button type="button" class="mode-tab" data-mode="unequal-percent" role="tab" aria-selected="false">
+                <span class="tab-icon">📊</span>
+                <span>Custom %</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Unequal Distribution Custom Inputs Container -->
+          <div id="unequal-config-box" class="unequal-config-box" style="display: none;">
+            <div class="unequal-box-header">
+              <div class="unequal-title-group">
+                <span class="unequal-title" id="unequal-mode-label">Custom Shares per Person</span>
+                <span class="unequal-badge" id="unequal-badge">By Amount</span>
+              </div>
+              <button type="button" id="auto-fill-remaining-btn" class="chip-btn mini-btn" title="Distribute remaining evenly among friends">
+                ⚡ Auto-balance
+              </button>
+            </div>
+
+            <!-- Live Allocation Balance Bar -->
+            <div class="allocation-meter">
+              <div class="meter-text">
+                <span id="meter-allocated-label">Allocated: ₹0.00</span>
+                <span id="meter-target-label">Target: ₹0.00</span>
+              </div>
+              <div class="meter-track">
+                <div id="meter-bar" class="meter-fill" style="width: 0%;"></div>
+              </div>
+              <div class="meter-status" id="meter-status-msg">
+                Remaining to assign: ₹0.00
+              </div>
+            </div>
+
+            <!-- Dynamic List of Custom Inputs per Person -->
+            <div id="unequal-persons-list" class="unequal-persons-list">
+              <!-- Dynamically populated via JS -->
+            </div>
+            <div id="unequal-error" class="field-error" aria-live="polite"></div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="action-buttons">
+            <button type="submit" id="split-btn" class="btn btn-primary">
+              <span class="btn-icon" aria-hidden="true">⚡</span>
+              <span>Calculate Split</span>
+            </button>
+            <button type="button" id="reset-btn" class="btn btn-secondary">
+              <span class="btn-icon" aria-hidden="true">🔄</span>
+              <span>Reset</span>
+            </button>
+          </div>
+
+          <!-- Master Global Error Alert (hidden by default) -->
+          <div id="global-error-box" class="global-error-box" role="alert" style="display: none;">
+            <div class="error-icon" aria-hidden="true">⚠️</div>
+            <div class="error-content">
+              <strong id="global-error-title">Cannot calculate split</strong>
+              <p id="global-error-desc">Please resolve the input errors before proceeding.</p>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- Results & Breakdown Section -->
+      <section class="card results-card" aria-labelledby="results-heading">
+        <div class="card-header">
+          <div class="card-header-icon accent-bg" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <div class="results-header-text">
+            <h2 id="results-heading" class="card-title">Split Breakdown & Verified Ledger</h2>
+            <p id="results-status-text" class="card-desc">Fill in details and click "Calculate Split"</p>
+          </div>
+          
+          <!-- Top Results Action Toolbar (Copy & Print) -->
+          <div class="header-actions" id="results-actions" style="display: none;">
+            <button type="button" id="copy-summary-btn" class="btn-icon-action" title="Copy split summary to clipboard" aria-label="Copy summary to clipboard">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span class="btn-tooltip" id="copy-tooltip">Copy</span>
+            </button>
+
+            <button type="button" id="print-split-btn" class="btn-icon-action" title="Print verified receipt" aria-label="Print verified receipt">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                <rect x="6" y="14" width="12" height="8"></rect>
+              </svg>
+              <span class="btn-tooltip">Print</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Empty State Placeholder -->
+        <div id="empty-state" class="empty-state">
+          <div class="empty-graphic" aria-hidden="true">
+            <span class="empty-emoji">💸</span>
+          </div>
+          <h3 class="empty-title">Ready to Split!</h3>
+          <p class="empty-desc">Enter your subtotal, tax rate, tip preferences, and friend count to generate an audited, penny-matched breakdown.</p>
+          <div class="empty-tips">
+            <div class="tip-item">⚖️ Equal or custom unequal distribution (Auto-Rebalanced)</div>
+            <div class="tip-item">📍 Location address or one-tap GPS coordinates</div>
+            <div class="tip-item">📅 Custom event date tracking & timestamping</div>
+            <div class="tip-item">✨ Mathematically verified 100% sum equality</div>
+          </div>
+        </div>
+
+        <!-- Active Result Container -->
+        <div id="results-content" class="results-content" style="display: none;">
+          <!-- Printable Receipt Wrapper -->
+          <div id="printable-receipt" class="printable-area official-receipt">
+            <!-- Formal Receipt Header -->
+            <div class="receipt-formal-header">
+              <div class="receipt-brand-logo">SPLITZZ! EXPENSE LEDGER</div>
+              <div class="receipt-meta-sub">ZeroCode Challenge Techfest 2026 • ID: ZC-1D2BABEF545A</div>
+              <div class="receipt-author-sub">Submission of Ojas Shailesh Deshpande (<a href="https://www.ojasdeshpande.in" target="_blank" rel="noopener noreferrer">www.ojasdeshpande.in</a>)</div>
+              <div class="receipt-divider-line"></div>
+            </div>
+
+            <!-- Top Occasion & Location Banner -->
+            <div class="occasion-banner">
+              <div class="banner-badge">EVENT</div>
+              <div class="banner-title-group">
+                <div class="banner-title" id="display-occasion-name">Pizza Party</div>
+                <div class="banner-sub-meta">
+                  <span id="display-event-date">Oct 4, 2026</span>
+                  <span class="banner-meta-sep">•</span>
+                  <span id="display-location-name">📍 Mumbai, India</span>
+                </div>
+              </div>
+              <div class="banner-mode-pill" id="display-split-mode">Equal Split</div>
+            </div>
+
+            <!-- Primary Metric Hero -->
+            <div class="metric-hero">
+              <div class="hero-label" id="hero-label">EACH PERSON PAYS</div>
+              <div class="hero-amount-wrapper">
+                <span class="hero-currency" id="hero-currency-symbol">₹</span>
+                <span class="hero-value" id="hero-share-amount">0.00</span>
+              </div>
+              <div class="hero-note" id="hero-note">Equal split among friends</div>
+            </div>
+
+            <!-- Key Financial Highlights Grid -->
+            <div class="metrics-grid">
+              <div class="metric-tile">
+                <div class="tile-label">Subtotal</div>
+                <div class="tile-val" id="metric-subtotal">₹0.00</div>
+              </div>
+              <div class="metric-tile">
+                <div class="tile-label">Tax Amount</div>
+                <div class="tile-val" id="metric-tax">+₹0.00</div>
+              </div>
+              <div class="metric-tile">
+                <div class="tile-label">Tip Amount</div>
+                <div class="tile-val" id="metric-tip">+₹0.00</div>
+              </div>
+              <div class="metric-tile highlight">
+                <div class="tile-label">Grand Total</div>
+                <div class="tile-val" id="metric-total">₹0.00</div>
+              </div>
+            </div>
+
+            <!-- Mathematical Verification Shield -->
+            <div class="verification-card" role="region" aria-label="Mathematical verification proof">
+              <div class="verification-header">
+                <div class="v-badge">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>MATHEMATICAL AUDIT PASSED</span>
+                </div>
+                <span class="v-status">Exact 100.00%</span>
+              </div>
+              <p class="v-desc">
+                Every individual share strictly sums up to the grand total bill amount with zero penny rounding discrepancy:
+              </p>
+              <div class="v-equation">
+                <div class="equation-row">
+                  <span class="eq-label">Sum of individual member shares:</span>
+                  <span class="eq-val" id="v-sum-shares">₹0.00</span>
+                </div>
+                <div class="equation-row">
+                  <span class="eq-label">Official audited grand total:</span>
+                  <span class="eq-val" id="v-total-bill">₹0.00</span>
+                </div>
+                <div class="equation-divider"></div>
+                <div class="equation-row final">
+                  <span class="eq-label">Audit variance / Discrepancy:</span>
+                  <span class="eq-val zero" id="v-difference">₹0.00 (Zero Variance • Perfect Match)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Friends List Header with Rename Hint -->
+            <div class="friends-section-header">
+              <h3 class="section-title">Individual Member Shares</h3>
+              <span class="section-hint">Click any name to customize • Tap to settle</span>
+            </div>
+
+            <!-- Dynamic Friends List -->
+            <div id="friends-list" class="friends-list" role="list">
+              <!-- Dynamically populated via JS -->
+            </div>
+
+            <!-- Formal Receipt Footer Signature & Stamp -->
+            <div class="receipt-print-footer">
+              <div class="receipt-stamp-box">
+                <div class="stamp-title">OFFICIAL SETTLEMENT RECORD</div>
+                <div class="stamp-sub">Competition ID: ZC-1D2BABEF545A • Techfest 2026</div>
+                <div class="stamp-author">Authored by Ojas Shailesh Deshpande (www.ojasdeshpande.in)</div>
+              </div>
+              <div class="receipt-signature-area">
+                <div class="sig-line"></div>
+                <div class="sig-label">Authorized Group Organizer Signature</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Action Buttons in Result -->
+          <div class="results-quick-bar">
+            <button type="button" id="copy-btn-bottom" class="btn btn-secondary">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span>Copy Breakdown</span>
+            </button>
+            <button type="button" id="print-btn-bottom" class="btn btn-secondary">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                <rect x="6" y="14" width="12" height="8"></rect>
+              </svg>
+              <span>Print Receipt</span>
+            </button>
+          </div>
+
+          <!-- Payment Progress Bar -->
+          <div class="settle-progress-box">
+            <div class="progress-labels">
+              <span>Collection Progress</span>
+              <span id="settle-percent-text">0% Collected</span>
+            </div>
+            <div class="progress-track">
+              <div id="settle-progress-bar" class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <div class="progress-stats">
+              <span id="settle-count-text">0 of 0 paid</span>
+              <span id="settle-remaining-text">₹0.00 pending</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="footer-content">
+        <p class="footer-primary">
+          Submission of <strong>Ojas Shailesh Deshpande</strong> • 
+          <a href="https://www.ojasdeshpande.in" target="_blank" rel="noopener noreferrer" class="footer-link">www.ojasdeshpande.in</a> • 
+          Competition ID: <strong>ZC-1D2BABEF545A</strong>
+        </p>
+        <p class="footer-sub">ZeroCode Challenge • Techfest 2026 • Pure Vanilla HTML5 + CSS3 + ES6+ JavaScript • 100% Offline</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Notification Toast Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <script src="ZC-1D2BABEF545A_script.js"></script>
+</body>
+</html>
