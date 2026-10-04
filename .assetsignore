@@ -1,0 +1,16 @@
+.git/
+.wrangler/
+node_modules/
+
+.gitignore
+.assetsignore
+package.json
+package-lock.json
+wrangler.toml
+worker.js
+
+README.md
+Prompts.md
+LICENSE
+Google AI Studio - System Instructions.txt
+Problem Statement.jpg

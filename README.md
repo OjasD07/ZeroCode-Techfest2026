@@ -1,7 +1,6 @@
 <a href="https://www.ojasdeshpande.in" target="_blank"><img src="https://raw.githubusercontent.com/OjasD07/OjasD07/main/Logo.svg" alt="Logo" style="float: ; width: 88px; height: 88px; background: #ffffff; border-radius: 10px; padding: 8px; margin: 0 0 8px 8px;" /></a>
 
-
-# SPLITZZ! Ã¢â‚¬â€ Group Bill Splitter
+# SPLITZZ! - Group Bill Splitter
 
 SPLITZZ! is a standalone bill-splitting app built for the ZeroCode Challenge at Techfest 2026. It calculates what each person owes, tracks payment status, and produces a shareable or printable receipt. The app uses vanilla HTML, CSS, and JavaScript and does not load external libraries or services.
 
@@ -27,7 +26,25 @@ Visit the hosted app at [https://splitzz.ojasdeshpande.in/](https://splitzz.ojas
 | `ZC-1D2BABEF545A_index.html` | App structure and controls |
 | `ZC-1D2BABEF545A_style.css` | Layout, responsive styling, and print styles |
 | `ZC-1D2BABEF545A_script.js` | Split calculations, validation, saved state, and interactions |
+| `worker.js` | Cloudflare Worker that serves the app at `/` and `/index.html` |
+| `wrangler.toml` | Cloudflare Workers project configuration |
+| `.assetsignore` | Excludes docs, repo files, and local tooling from uploaded static assets |
 | `Prompts.md` | Original prompts used to develop the app |
+
+## Deploy to Cloudflare Workers
+
+This project is configured for Cloudflare Workers with the worker name `zerocode-techfest2026`.
+
+```bash
+npm install
+npm run deploy
+```
+
+For local preview with Wrangler:
+
+```bash
+npm run dev
+```
 
 ## Submission
 
@@ -37,7 +54,6 @@ Visit the hosted app at [https://splitzz.ojasdeshpande.in/](https://splitzz.ojas
 - **Google AI Studio Link:** [https://ai.studio/apps/bb1ceff1-c9e2-4d5b-99af-a0e38fd5e085](https://ai.studio/apps/bb1ceff1-c9e2-4d5b-99af-a0e38fd5e085)
 
 ---
-
 
 ## Author
 
