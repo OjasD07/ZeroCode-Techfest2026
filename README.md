@@ -26,25 +26,7 @@ Visit the hosted app at [https://splitzz.ojasdeshpande.in/](https://splitzz.ojas
 | `ZC-1D2BABEF545A_index.html` | App structure and controls |
 | `ZC-1D2BABEF545A_style.css` | Layout, responsive styling, and print styles |
 | `ZC-1D2BABEF545A_script.js` | Split calculations, validation, saved state, and interactions |
-| `worker.js` | Cloudflare Worker that serves the app at `/` and `/index.html` |
-| `wrangler.toml` | Cloudflare Workers project configuration |
-| `.assetsignore` | Excludes docs, repo files, and local tooling from uploaded static assets |
 | `Prompts.md` | Original prompts used to develop the app |
-
-## Deploy to Cloudflare Workers
-
-This project is configured for Cloudflare Workers with the worker name `zerocode-techfest2026`.
-
-```bash
-npm install
-npm run deploy
-```
-
-For local preview with Wrangler:
-
-```bash
-npm run dev
-```
 
 ## Submission
 
